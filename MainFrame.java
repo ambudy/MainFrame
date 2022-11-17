@@ -95,5 +95,4 @@ public class MainFrame extends JFrame {
         MainFrame myFrame = new MainFrame();
         myFrame.initialize();
     }
-
 }
