@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "parametrosargumentos.main",
+            "projectName": "Ejercicioclaseyobjeto_e59c49d6"
+        },
+        {
             "name": "Java",
             "type": "java",
             "request": "launch",
