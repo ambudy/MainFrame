@@ -1,6 +1,7 @@
 package Ventana;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Principal1{
     public static void main(String[] args) {
