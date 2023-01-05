@@ -13,6 +13,7 @@ public class Principal extends JFrame{
         setLocationRelativeTo(null); //poner la ventana en el sentro no importa el tamaño de la pantalla
         //setResizable(false); // sirbe para cambiar de tamaño la ventana con el cursor
         // setMinimumSize(new Dimension(200,200)); // sirbe para establecer un espacio minimo 
+
         this.getContentPane().setBackground(Color.ORANGE);  //poner color de fondo a la ventana
         iniciarPanel(); // llamar al metodo desde el  constructor principal
         setDefaultCloseOperation(EXIT_ON_CLOSE); //sirve para serar la ventana junto con el programa
@@ -23,9 +24,17 @@ public class Principal extends JFrame{
     //creando panel
     private void iniciarPanel() {
         JPanel panel = new JPanel(); // creacion del panel
-        setSize(500,500);
-        panel.setBackground(Color.BLUE); //poniendo color de fondo al panel
+        //panel.setBackground(Color.BLUE); //poniendo color de fondo al panel
+        panel.setLayout(null);//desactivando el diseño por defecto del panel
         this.getContentPane().add(panel);//agregar panel sobre la ventana junto
+
+
+        //creamos etiqueta 
+        JLabel etiqueta = new JLabel(); //creamos la etiqueta dentro de los parentecis anexo el texto entre comillas doble
+        etiqueta.setText("hola"); //establecemos texto de la etiqueta dentro
+        etiqueta.setBounds(10, 10, 50, 30);
+        panel.add(etiqueta); //agregamos la etiqueta al panel
+        
 
     }
     
