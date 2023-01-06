@@ -30,10 +30,15 @@ public class Principal extends JFrame{
 
 
         //creamos etiqueta 
-        JLabel etiqueta = new JLabel(); //creamos la etiqueta dentro de los parentecis anexo el texto entre comillas doble
-        etiqueta.setText("hola"); //establecemos texto de la etiqueta dentro
-        etiqueta.setBounds(10, 10, 50, 30);
-        panel.add(etiqueta); //agregamos la etiqueta al panel
+        JLabel etiqueta = new JLabel("hola", SwingConstants.CENTER); //creamos la etiqueta dentro de los parentecis anexo el texto entre comillas doble y establecer su alineacion horizontal
+        //etiqueta.setText("hola"); //establecemos texto de la etiqueta dentro
+        //etiqueta.setHorizontalAlignment(SwingConstants.CENTER); establecer la alineacion horizontal del texto
+        etiqueta.setBounds(10, 10, 100, 20); // poner ancho y alto a la etiqueta 
+        etiqueta.setForeground(Color.BLUE); //poner color al texto de la etiqueta 
+        etiqueta.setOpaque(true); //desactivar los valores predeterminados de la etiqueta
+        etiqueta.setBackground(Color.yellow); //ponerle color de fondo a la etiqueta
+        etiqueta.setFont(new Font("Arial", Font.BOLD, 20)); // establecemos la clase de letra el tipo y el tamano, la clase de letra tambien puede ser 0 normal 1 negrita 2 cursiva 3 negrita cursiva
+        panel.add(etiqueta); // agregamos la etiqueta al panel
         
 
     }
