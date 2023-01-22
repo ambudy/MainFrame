@@ -5,6 +5,8 @@ import java.awt.*;
 
 //clase principal extends sirve para enlazar el JFrame
 public class Principal extends JFrame{
+    //creo el panel
+    public JPanel panel;
     //constructor de la clase
     public Principal(){
         setSize(500,500); //ancho y altura de la ventana
@@ -14,25 +16,34 @@ public class Principal extends JFrame{
         setLocationRelativeTo(null); //poner la ventana en el sentro no importa el tamaño de la pantalla
         //setResizable(false); // sirbe para cambiar de tamaño la ventana con el cursor
         // setMinimumSize(new Dimension(200,200)); // sirbe para establecer un espacio minimo 
-
         this.getContentPane().setBackground(Color.ORANGE);  //poner color de fondo a la ventana
-        iniciarPanel(); // llamar al metodo desde el  constructor principal
         setDefaultCloseOperation(EXIT_ON_CLOSE); //sirve para serar la ventana junto con el programa
-        
-        
+
+        //llamar metodo a la clase principal
+        iniciarMetodo(); // llamar iniciarMetodo desde el  constructor principal
+            
     }
 
-    //creando panel
-    /**
-     * 
-     */
-    private void iniciarPanel() {
-        JPanel panel = new JPanel(); // creacion del panel
+
+    //iniciar metodos
+    private void iniciarMetodo() {
+        colocarPaneles();
+        colocarEtiquetas();
+        btnGuardar();
+        radioBotones();
+    }
+
+
+    //metodo para colocar paneles
+    private void colocarPaneles(){
+        panel = new JPanel(); // creacion del panel
         //panel.setBackground(Color.BLUE); //poniendo color de fondo al panel
         panel.setLayout(null);//desactivando el diseño por defecto del panel
         this.getContentPane().add(panel);//agregar panel sobre la ventana junto
+    }
 
-
+    //metodo para colocar las etiquetas
+    private void colocarEtiquetas(){
         //creamos etiqueta 
         JLabel etiqueta = new JLabel("fragata", SwingConstants.CENTER); //creamos la etiqueta dentro de los parentecis anexo el texto entre comillas doble y establecer su alineacion horizontal
         //etiqueta.setText("hola"); //establecemos texto de la etiqueta dentro
@@ -69,7 +80,48 @@ public class Principal extends JFrame{
         etiqueta2.setBounds(10, 80, 458, 458);
         panel.add(etiqueta2);
         */
-
     }
-    
+
+        //metodo para crear botone
+        private void btnGuardar(){
+                JButton btnGuarda = new JButton("Guardar"); 
+                btnGuarda.setBounds(100, 100, 100, 40); //establecer tamaño y ubicacion
+                btnGuarda.setEnabled(true);//activar el voton
+                btnGuarda.setMnemonic('b');//accion de clado con alt + b
+                btnGuarda.setForeground(Color.blue);//establecer color a la letra
+                btnGuarda.setFont((new Font("arial", Font.BOLD, 15)));
+                btnGuarda.setOpaque(true);
+                btnGuarda.setBackground(Color.red);
+                panel.add(btnGuarda);
+
+        //BOTON DE IMAGEN
+            JButton boton2 = new JButton();
+            boton2.setBounds(100, 200, 100, 40);
+            ImageIcon clicAqui = new ImageIcon("fragata.jpg");
+            boton2.setIcon(new ImageIcon(clicAqui.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
+            panel.add(boton2);
+            }
+
+
+             //Radio botones
+            private void radioBotones(){
+                JRadioButton radioBoton = new JRadioButton("opcion1", true);
+                radioBoton.setBounds(100, 300, 100, 50);
+                panel.add(radioBoton);
+
+
+                JRadioButton radioBoton1 = new JRadioButton("opcion2", false);
+                radioBoton1.setBounds(100, 335, 100, 50);
+                panel.add(radioBoton1);
+
+
+                JRadioButton radioBoton2 = new JRadioButton("opcion3", false);
+                radioBoton2.setBounds(100, 370, 100, 50);
+                panel.add(radioBoton2);
+
+                ButtonGroup grupoRadioBotones = new ButtonGroup();
+                grupoRadioBotones.add(radioBoton);
+                grupoRadioBotones.add(radioBoton1);
+                grupoRadioBotones.add(radioBoton2);
+            }
 }
