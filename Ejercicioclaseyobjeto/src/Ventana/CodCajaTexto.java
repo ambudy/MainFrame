@@ -22,6 +22,7 @@ public class CodCajaTexto extends JFrame{
     //poner todos los metodos
     private void IniciarMetodo() {
         CajaTexto();
+        AreaTexto();
     }
     //metodo CajaTexto
     private void CajaTexto() {
@@ -29,5 +30,16 @@ public class CodCajaTexto extends JFrame{
         Caja.setBounds(50, 50, 100, 30); //poner posicion en el eje x,y,ancho alto 
         Caja.setText("hola...");//texto inicial
         add(Caja); //agregar caja 
+    }
+
+
+
+    //area de texto
+    private void AreaTexto(){
+        JTextArea Area = new JTextArea();
+        Area.setBounds(50, 100, 300, 200);
+        Area.append("anexa el texto");// ingresa mas texto
+        Area.setEditable(true);// sirbe para decir si se edita o no el area
+        add(Area);
     }
 }
